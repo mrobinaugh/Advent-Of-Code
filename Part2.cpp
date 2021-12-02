@@ -24,7 +24,7 @@ int main(){
         while(depths.good()){
             Val1 = Val2;
             Val2 = Val3;
-            Val3 = 0;
+            //Val3 = 0;
             depths >> Val3;
             currSum = Val1 + Val2 + Val3;
             if (currSum > prevSum) {
