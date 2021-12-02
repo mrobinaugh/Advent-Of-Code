@@ -41,8 +41,6 @@ int main(){
                 Val2 += currVal;
                 Val3 += currVal;
                 ++i;
-
-                
             } else if ((i-1) % 3 == 0){
                 if (Val2 > prevVal){
                     numIncrease++;
