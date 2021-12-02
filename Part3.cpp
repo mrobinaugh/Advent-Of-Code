@@ -27,6 +27,8 @@ int main(){
         }
     }
 
+    directions.close();
+
     std::cout << depth << "\n" << position << "\n" << depth * position << "\n";
 
     return 0;

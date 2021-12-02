@@ -61,6 +61,8 @@ int main(){
         }
     }
 
+    depths.close();
+
     std::cout << numIncrease - 1 << "\n";
 
     return 0;

@@ -6,6 +6,7 @@ int main(){
 
     int depth = 0;
     int position = 0;
+    int aim = 0;
     int val = 0;
     std::string direction;
 
@@ -18,14 +19,17 @@ int main(){
             directions >> val;
             if (direction == "forward"){
                 position += val;
+                depth += aim * val;
             } else if (direction == "up"){
-                depth -= val;
+                aim -= val;
             } else if (direction == "down"){
-                depth += val;
+                aim += val;
             }
             val = 0;
         }
     }
+
+    directions.close();
 
     std::cout << depth << "\n" << position << "\n" << depth * position << "\n";
 
