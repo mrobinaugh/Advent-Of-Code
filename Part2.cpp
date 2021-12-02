@@ -6,64 +6,37 @@ int main(){
     int Val1 = 0;
     int Val2 = 0;
     int Val3 = 0;
-    int prevVal = 0;
-    int currVal = 0;
+    int prevSum = 0;
+    int currSum = 0;
     int numIncrease = 0;
-    int i = 0;
 
     std::ifstream depths;
     depths.open("day1TextFile");
 
     if (depths.is_open()){
         std::cout << "is open \n";
-        depths >> currVal;
-        Val1 = currVal;
-        ++i;
-        depths >> currVal;
-        Val1 += currVal;
-        Val2 += currVal;
-        ++i;
-        depths >> currVal;
-        Val1 += currVal;
-        Val2 += currVal;
-        Val3 += currVal;
-        ++i;
+        
+        depths >> Val1;
+        depths >> Val2;
+        depths >> Val3;
+        prevSum = Val1 + Val2 + Val3;
+
         while(depths.good()){
-            depths >> currVal;
-            if ((i % 3) == 0) {
-                if (Val1 > prevVal){
-                    numIncrease++;
-                }
-                prevVal = Val1;
-                Val1 = currVal;
-                Val2 += currVal;
-                Val3 += currVal;
-                ++i;
-            } else if ((i-1) % 3 == 0){
-                if (Val2 > prevVal){
-                    numIncrease++;
-                }
-                prevVal = Val2;
-                Val1 += currVal;
-                Val2 = currVal;
-                Val3 += currVal;
-                ++i;
-            } else {
-                if (Val3 > prevVal){
-                    numIncrease++;
-                }
-                prevVal = Val3;
-                Val1 += currVal;
-                Val2 += currVal;
-                Val3 = currVal;
-                ++i;
+            Val1 = Val2;
+            Val2 = Val3;
+            Val3 = 0;
+            depths >> Val3;
+            currSum = Val1 + Val2 + Val3;
+            if (currSum > prevSum) {
+                ++numIncrease;
             }
+            prevSum = currSum; 
         }
     }
 
     depths.close();
 
-    std::cout << numIncrease - 1 << "\n";
+    std::cout << numIncrease << "\n";
 
     return 0;
 }
