@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-void part3(){
+void star3(){
     int depth = 0;
     int position = 0;
     int val = 0;
@@ -31,7 +31,7 @@ void part3(){
     std::cout << depth * position << "\n";
 }
 
-void part4(){
+void star4(){
     int depth = 0;
     int position = 0;
     int aim = 0;
@@ -65,8 +65,8 @@ void part4(){
 
 int main(){
     
-    part3();
-    part4();   
+    star3();
+    star4();   
 
     return 0;
 }
