@@ -11,8 +11,8 @@ void part1(){
 
     string binary;
 
-    long epsilonb, gammab = 0;
-    long epsilon, gamma =0;
+    string epsilonb, gammab = "Twelve Digit";
+    long epsilon, gamma;
 
     vector<int> sums = {0,0,0,0,0,0,0,0,0,0,0,0};
 
@@ -25,16 +25,18 @@ void part1(){
         }
         for (int i=0; i<12; ++i){
             if (sums[i] >= 500){
-                gammab += 100000000000 / (pow(10, i));
+                gammab[i] = '1';
+                epsilonb[i] = '0';
             } else {
-                epsilonb += 100000000000 / pow(10, i);
+                gammab[i] = '0';
+                epsilonb[i] = '1';
             }
         }
 
     }
 
-    gamma = stoi(to_string(gammab), 0, 2);
-    epsilon = stoi(to_string(epsilonb), 0, 2);
+    gamma = stoi(gammab, 0, 2);
+    epsilon = stoi(epsilonb, 0, 2);
 
     binaries.close();
 
