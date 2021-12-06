@@ -28,12 +28,24 @@ void part1(){
             //std::cout << x1 << ',' << y1 << ',' << x2 << ',' << y2 << '\n';
 
             if (x1 == x2){
-                for(int i = y1; i <= y2; ++i){
-                    grid[i][x2] += 1;
+                if (y1 <= y2){
+                    for(int i = y1; i <= y2; ++i){
+                        grid[i][x2] += 1;
+                    }
+                } else {
+                    for(int i = y2; i <= y1; ++i){
+                        grid[i][x2] += 1;
+                    }
                 }
             } else if (y1 == y2){
-                for(int i = x1; i <= x2; ++i){
-                    grid[y2][i] += 1;
+                if (x1 <= x2){
+                    for(int i = x1; i <= x2; ++i){
+                        grid[y1][i] += 1;
+                    }
+                } else {
+                    for(int i = x2; i <= x1; ++i){
+                        grid[y1][i] += 1;
+                    }
                 }
             }
 
@@ -49,7 +61,7 @@ void part1(){
                 ++total;
             }
         }
-    }
+    } 
     
     std::cout << "Part 1: " << total << std::endl;
 
