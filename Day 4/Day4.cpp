@@ -2,7 +2,6 @@
 #include <fstream>
 #include <vector>
 #include <cmath>
-#include <string>
 
 void part1(){
     std::ifstream bingo;
